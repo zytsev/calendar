@@ -1,13 +1,12 @@
 @import 'tailwindcss';
 
+* {
+    box-sizing: border-box;
+}
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -15,56 +14,197 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-a:hover {
-    color: #535bf2;
-}
-
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
+    background-color: #f5f5f5;
     min-width: 320px;
     min-height: 100vh;
 }
 
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
-
-button {
+.schedule-container {
+    background: white;
     border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(7, 1fr);
+    grid-template-rows: 40px repeat(48, 30px);
+    gap: 1px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    min-width: 800px;
+}
+
+/* Header cells */
+.time-header {
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.day-header {
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Time slot cells */
+.time-slot {
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #7f8c8d;
+    border-right: 1px solid #bdc3c7;
+}
+
+/* Regular schedule cells */
+.schedule-cell {
+    background-color: white;
+    border: 1px solid #ecf0f1;
+    position: relative;
+}
+
+.schedule-cell:hover {
+    background-color: #f8f9fa;
+}
+
+/* Lesson blocks */
+.lesson {
+    background-color: #3498db;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lesson:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Different lesson types */
+.lesson.math {
+    background-color: #e74c3c;
+}
+
+.lesson.science {
+    background-color: #2ecc71;
+}
+
+.lesson.english {
+    background-color: #f39c12;
+}
+
+.lesson.history {
+    background-color: #9b59b6;
+}
+
+.lesson.art {
+    background-color: #1abc9c;
+}
+
+/* Duration indicators */
+.lesson-duration {
+    font-size: 10px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+/* Specific lesson placements */
+.math-mon-9 {
+    grid-column: 2;
+    grid-row: 19 / 21;
+} /* 9:00-10:00, 2 slots */
+.science-mon-14 {
+    grid-column: 2;
+    grid-row: 29 / 32;
+} /* 14:00-15:30, 3 slots */
+
+.english-tue-8 {
+    grid-column: 3;
+    grid-row: 17 / 19;
+} /* 8:00-9:00, 2 slots */
+.math-tue-10 {
+    grid-column: 3;
+    grid-row: 21 / 23;
+} /* 10:00-11:00, 2 slots */
+.history-tue-15 {
+    grid-column: 3;
+    grid-row: 31 / 33;
+} /* 15:00-16:00, 2 slots */
+
+.science-wed-9 {
+    grid-column: 4;
+    grid-row: 19 / 22;
+} /* 9:00-10:30, 3 slots */
+.art-wed-13 {
+    grid-column: 4;
+    grid-row: 27 / 29;
+} /* 13:00-14:00, 2 slots */
+
+.math-thu-8 {
+    grid-column: 5;
+    grid-row: 17 / 19;
+} /* 8:00-9:00, 2 slots */
+.english-thu-11 {
+    grid-column: 5;
+    grid-row: 23 / 25;
+} /* 11:00-12:00, 2 slots */
+
+.history-fri-9 {
+    grid-column: 6;
+    grid-row: 19 / 21;
+} /* 9:00-10:00, 2 slots */
+.science-fri-14 {
+    grid-column: 6;
+    grid-row: 29 / 31;
+} /* 14:00-15:00, 2 slots */
+
+.art-sat-10 {
+    grid-column: 7;
+    grid-row: 21 / 23;
+} /* 10:00-11:00, 2 slots */
+
+/* Legend */
+.legend {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
 }
