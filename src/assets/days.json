@@ -1,34 +1,30 @@
 [
     {
         "id": 1,
-        "title": "Time"
-    },
-    {
-        "id": 2,
         "title": "Monday"
     },
     {
-        "id": 3,
+        "id": 2,
         "title": "Tuesday"
     },
     {
-        "id": 4,
+        "id": 3,
         "title": "Wednesday"
     },
     {
-        "id": 5,
+        "id": 4,
         "title": "Thursday"
     },
     {
-        "id": 6,
+        "id": 5,
         "title": "Friday"
     },
     {
-        "id": 7,
+        "id": 6,
         "title": "Saturday"
     },
     {
-        "id": 1,
+        "id": 7,
         "title": "Sunday"
     }
 ]

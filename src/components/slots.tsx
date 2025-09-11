@@ -5,7 +5,7 @@ export const Slots = ({ slots }: TimesProps) => {
     return (
         <>
             {slots.map((el, i) => (
-                <div key={i} className='time-slot' style={{ gridRow: `${i + 2}` }}>
+                <div key={i} className='time-slot'>
                     {el}
                 </div>
             ))}

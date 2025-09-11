@@ -30,13 +30,13 @@ body {
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: 80px repeat(7, 1fr);
-    grid-template-rows: 40px repeat(48, 30px);
+    grid-template-columns: 80px;
+    /* grid-template-rows: 40px repeat(48, 30px); */
     gap: 1px;
     background-color: #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
-    min-width: 800px;
+    /* min-width: 800px; */
 }
 
 /* Header cells */
@@ -46,6 +46,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     font-weight: bold;
     font-size: 12px;
 }
@@ -77,11 +78,13 @@ body {
     border: 1px solid #ecf0f1;
     position: relative;
 }
-
-.schedule-cell:hover {
-    background-color: #f8f9fa;
+.schedule-cell[data-type='working'] {
+    background-color: var(--color-green-200);
+    cursor: pointer;
 }
-
+.schedule-cell[data-type='working']:hover {
+    background-color: var(--color-green-500);
+}
 /* Lesson blocks */
 .lesson {
     background-color: #3498db;
@@ -130,81 +133,4 @@ body {
     font-size: 10px;
     opacity: 0.8;
     margin-top: 2px;
-}
-
-/* Specific lesson placements */
-.math-mon-9 {
-    grid-column: 2;
-    grid-row: 19 / 21;
-} /* 9:00-10:00, 2 slots */
-.science-mon-14 {
-    grid-column: 2;
-    grid-row: 29 / 32;
-} /* 14:00-15:30, 3 slots */
-
-.english-tue-8 {
-    grid-column: 3;
-    grid-row: 17 / 19;
-} /* 8:00-9:00, 2 slots */
-.math-tue-10 {
-    grid-column: 3;
-    grid-row: 21 / 23;
-} /* 10:00-11:00, 2 slots */
-.history-tue-15 {
-    grid-column: 3;
-    grid-row: 31 / 33;
-} /* 15:00-16:00, 2 slots */
-
-.science-wed-9 {
-    grid-column: 4;
-    grid-row: 19 / 22;
-} /* 9:00-10:30, 3 slots */
-.art-wed-13 {
-    grid-column: 4;
-    grid-row: 27 / 29;
-} /* 13:00-14:00, 2 slots */
-
-.math-thu-8 {
-    grid-column: 5;
-    grid-row: 17 / 19;
-} /* 8:00-9:00, 2 slots */
-.english-thu-11 {
-    grid-column: 5;
-    grid-row: 23 / 25;
-} /* 11:00-12:00, 2 slots */
-
-.history-fri-9 {
-    grid-column: 6;
-    grid-row: 19 / 21;
-} /* 9:00-10:00, 2 slots */
-.science-fri-14 {
-    grid-column: 6;
-    grid-row: 29 / 31;
-} /* 14:00-15:00, 2 slots */
-
-.art-sat-10 {
-    grid-column: 7;
-    grid-row: 21 / 23;
-} /* 10:00-11:00, 2 slots */
-
-/* Legend */
-.legend {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-}
-
-.legend-color {
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
 }
