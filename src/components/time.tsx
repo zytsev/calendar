@@ -7,7 +7,7 @@ interface TimeProps {
 }
 export const Time = ({ slots, value, setValue }: TimeProps) => {
     return (
-        <div className='schedule-grid' style={{ gridTemplateRows: `40px repeat(${slots.length}, 30px)` }}>
+        <div className='schedule-grid' style={{ gridTemplateRows: `40px repeat(${slots.length}, 30px)`, gridTemplateColumns: '80px' }}>
             <div className='time-header'>
                 <span>Time</span>
                 <DialogInterval value={value} setValue={setValue} />

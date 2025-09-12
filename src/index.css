@@ -30,7 +30,7 @@ body {
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: 80px;
+    grid-template-columns: clamp(7.5rem, 6.786rem + 3.57vw, 10rem);
     /* grid-template-rows: 40px repeat(48, 30px); */
     gap: 1px;
     background-color: #e0e0e0;
@@ -60,7 +60,12 @@ body {
     font-weight: bold;
     font-size: 14px;
 }
-
+.fixed-header {
+    position: fixed;
+    z-index: 1;
+    width: clamp(7.5rem, 6.786rem + 3.57vw, 10rem);
+    height: 40px;
+}
 /* Time slot cells */
 .time-slot {
     background-color: #ecf0f1;
