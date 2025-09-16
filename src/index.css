@@ -90,6 +90,30 @@ body {
 .schedule-cell[data-type='working']:hover {
     background-color: var(--color-green-500);
 }
+.tooltip {
+    position: relative;
+}
+.schedule-cell.tooltip {
+    margin-bottom: -1px;
+    border-color: var(--color-red-300);
+}
+.tooltip::after {
+    content: attr(data-student);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 2;
+}
+.tooltip:hover::after {
+    opacity: 1;
+}
 /* Lesson blocks */
 .lesson {
     background-color: #3498db;
