@@ -1,4 +1,4 @@
-import { generateWeeklyTimeRanges, timestampToHHMM } from '@/service/utils';
+import { generateWeeklyTimeRanges } from '@/service/utils';
 import { useEffect, useState } from 'react';
 import DialogBooking from './dialogBooking';
 

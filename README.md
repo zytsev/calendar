@@ -25,7 +25,7 @@ The goal is to create a component that displays a teacher’s schedule. The cale
    • Each cell can be:
    o Not available (e.g., outside working hours, white).
    o Available (clickable, styled green).
-   o Booked (clickable, styled red with student name).******************\_\_\_\_******************
+   o Booked (clickable, styled red with student name).********\*\*********\_\_\_\_********\*\*********
 4. Layout & Responsiveness
    • CSS Grid structure:
    o Columns = days in view.
@@ -54,34 +54,6 @@ The goal is to create a component that displays a teacher’s schedule. The cale
    "startTime": "2025-08-23T22:30:00+00:00",
    "endTime": "2025-08-24T02:29:59+00:00"
    },
-   {
-   "startTime": "2025-08-25T01:30:00+00:00",
-   "endTime": "2025-08-25T04:59:59+00:00"
-   },
-   {
-   "startTime": "2025-08-25T11:00:00+00:00",
-   "endTime": "2025-08-25T19:29:59+00:00"
-   },
-   {
-   "startTime": "2025-08-27T02:30:00+00:00",
-   "endTime": "2025-08-27T06:59:59+00:00"
-   },
-   {
-   "startTime": "2025-08-28T23:00:00+00:00",
-   "endTime": "2025-08-29T08:29:59+00:00"
-   },
-   {
-   "startTime": "2025-08-30T22:30:00+00:00",
-   "endTime": "2025-08-31T02:29:59+00:00"
-   },
-   {
-   "startTime": "2025-09-01T01:30:00+00:00",
-   "endTime": "2025-09-01T04:59:59+00:00"
-   },
-   {
-   "startTime": "2025-09-01T11:00:00+00:00",
-   "endTime": "2025-09-01T19:29:59+00:00"
-   }
    ]
    type Lesson = [
    {

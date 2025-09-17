@@ -24,15 +24,6 @@ export function generateTimeStamps(intervalMinutes: number) {
     return result;
 }
 
-export function timestampToHHMM(ts: number) {
-    const date = new Date(ts);
-
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-
-    return `${hours}.${minutes}`;
-}
-
 export function generateWeeklyTimeRanges(intervalMinutes: number, numberDayOfWeek: number) {
     const result = [];
     const totalMinutesInDay = 24 * 60;
